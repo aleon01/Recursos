@@ -1,0 +1,37 @@
+<section id="pantalla-dividida">
+    <div class="izquierda">
+        <button mat-button [matMenuTriggerFor]="menuRecursos" class="color-boton-menu">Recursos</button>
+        <mat-menu #menuRecursos="matMenu">
+            <button mat-menu-item routerLink="formacion-usuarios">Formación a usuarios</button>
+            <button mat-menu-item>Espacios académicos </button>
+            <button mat-menu-item>Aprobación de solicitudes</button>
+            <button mat-menu-item>Solicitudes, Consultas e Informes</button>
+        </mat-menu>
+        <tr></tr>
+        <button mat-button class="color-boton-menu">Usabilidad Recursos</button>
+        <tr></tr>
+        <button mat-button [matMenuTriggerFor]="menuInvestigacion" class="color-boton-menu">Investigación</button>
+        <mat-menu #menuInvestigacion="matMenu">
+            <button mat-menu-item>Líneas de investigación</button>
+            <button mat-menu-item>Grupos de investigación</button>
+            <button mat-menu-item>Semilleros de investigación</button>
+            <button mat-menu-item>Consultas</button>
+            <button mat-menu-item>Proyectos de investigación</button>
+            <button mat-menu-item>Productos</button>
+        </mat-menu>
+        <tr></tr>
+        <button mat-button class="color-boton-menu" routerLink="/usuarios">Usuario</button>
+        <tr></tr>
+        <button mat-button class="color-boton-menu" routerLink="/logout">Cerrar Sesión</button>
+
+
+
+
+
+    </div>
+
+    <div class="derecha">
+
+
+    </div>
+</section>

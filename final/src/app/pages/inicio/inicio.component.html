@@ -1,0 +1,27 @@
+<section id="pantalla-dividida">
+    <div class="izquierda">
+      <div fxLayout="column" class="p-2" style="text-align: center; margin-top: 50%;">
+        <div class="p-2">
+          <mat-form-field>
+            <mat-label style="color: white;"> Usuario</mat-label>
+            <input class="confondo" style="color: white;" matInput type="text" style="color: white;" name="usuario"
+              maxlength="15" [(ngModel)]="usuario">
+          </mat-form-field>
+          <br>
+          <mat-form-field>
+            <mat-label style="color: white; ">Contraseña</mat-label>
+            <input style="color: white;" matInput type="password" name="contrasena" maxlength="15"
+              [(ngModel)]="contrasena">
+          </mat-form-field>
+          <br>
+          <button mat-raised-button color="basic" (click)="checkLogin()">Iniciar Sesión</button>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="derecha">
+      <h1>Recursos Físicos y Tecnológicos e Investigación</h1>
+    </div>
+</section>
+

@@ -1,0 +1,120 @@
+<section id="pantalla-dividida">
+    <div class="izquierda">
+        <button mat-button [matMenuTriggerFor]="menuRecursos" class="color-boton-menu">Recursos</button>
+                <mat-menu #menuRecursos="matMenu">
+                    <button mat-menu-item>Formación a usuarios</button>
+                    <button mat-menu-item>Espacios académicos</button>
+                    <button mat-menu-item>Aprobación de solicitudes</button>
+                    <button mat-menu-item>Solicitudes, Consultas e Informes</button>
+                </mat-menu>
+                <tr></tr>
+                <button mat-button class="color-boton-menu">Usabilidad Recursos</button>
+                <tr></tr>
+                <button mat-button [matMenuTriggerFor]="menuInvestigacion" class="color-boton-menu">Investigación</button>
+                <mat-menu #menuInvestigacion="matMenu">
+                    <button mat-menu-item>Líneas de investigación</button>
+                    <button mat-menu-item>Grupos de investigación</button>
+                    <button mat-menu-item>Semilleros de investigación</button>
+                    <button mat-menu-item>Consultas</button>
+                    <button mat-menu-item>Proyectos de investigación</button>
+                    <button mat-menu-item>Productos</button>
+                </mat-menu>
+                <tr></tr>
+                <button mat-button class="color-boton-menu" >Usuario</button>
+                <tr></tr>
+                <button mat-button class="color-boton-menu">Cerrar Sesión</button>
+
+
+    </div>
+    <div id="derecha">
+        <h1>Registrar usuarios</h1>
+
+        <!--<mat-tab-group>
+            <mat-tab label="Visualizar"> Visualizar 
+
+            </mat-tab>
+            <mat-tab label="Registrar">-->
+        <form style="text-align: center;">
+            <div class="input-field col s6">
+
+                <mat-form-field>
+                    <mat-label>Documento</mat-label>
+                    <input matInput type="number" placeholder="Documento" [(ngModel)]="documento" required>
+                </mat-form-field>
+                &nbsp;
+                <mat-form-field>
+                    <mat-label>Nombre</mat-label>
+                    <input matInput type="text" placeholder="Nombre" [(ngModel)]="nombre" required>
+                </mat-form-field>
+
+            </div>
+            <div class="input-field col s6">
+                <mat-form-field>
+                    <mat-label>Dependencia</mat-label>
+                    <mat-select [(ngModel)]="selectedValueD" name="Sdependencia" [(ngModel)]="usuario.dependencia">
+                        <mat-option *ngFor="let dependencia of dependencias" [value]="dependencia.value">
+                            {{dependencia.viewValue}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                &nbsp;
+                <mat-form-field>
+                    <mat-label>Tipo usuario</mat-label>
+                    <mat-select [(ngModel)]="selectedValueT" name="StipoUsuario" [(ngModel)]="usuario.tipoUsuario">
+                        <mat-option *ngFor="let tipoUsuario of tiposusuarios" [value]="tipoUsuario.valueT">
+                            {{tipoUsuario.viewValueT}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="input-field col s6">
+                <mat-form-field>
+                    <mat-label>Correo</mat-label>
+                    <input matInput type="email" placeholder="alguien@ucundinamarca.edu.co" [(ngModel)]="correo"
+                        required>
+                </mat-form-field>
+                &nbsp;
+                <mat-form-field>
+                    <mat-label>Sede</mat-label>
+                    <mat-select [(ngModel)]="selectedValueE" name="Sextension" [(ngModel)]="usuario.extension">
+                        <mat-option *ngFor="let extension of extensiones" [value]="extension.valueE">
+                            {{extension.viewValueE}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+            </div>
+            <div class="input-field col s6">
+                <mat-form-field>
+                    <mat-label>Usuario</mat-label>
+                    <input matInput placeholder="Usuario" [(ngModel)]="user" required>
+                </mat-form-field>
+                &nbsp;
+                <mat-form-field>
+                    <mat-label>Contraseña</mat-label>
+                    <input matInput type="password" placeholder="**********" [(ngModel)]="contrasena" required>
+                </mat-form-field>
+
+            </div>
+            <mat-card-actions>
+                <button style="text-align: center;" mat-raised-button color="basic"
+                    (click)="guardarUsuario()">REGISTRAR</button>
+            </mat-card-actions>
+
+
+        </form>
+
+
+
+
+
+
+
+
+
+
+        <!--</mat-tab>
+        </mat-tab-group>-->
+
+    </div>
+</section>

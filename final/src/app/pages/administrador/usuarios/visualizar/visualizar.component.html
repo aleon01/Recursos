@@ -1,0 +1,59 @@
+<section id="pantalla-dividida">
+  <div class="izquierda">
+  </div>
+  <div class="derecha">
+    <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+
+      <!-- docuemnto Column -->
+      <ng-container matColumnDef="docuemnto">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Documento </th>
+        <td mat-cell *matCellDef="let element"> {{element.docuemnto} </td>
+      </ng-container>
+    
+      <!-- Name Column -->
+      <ng-container matColumnDef="nombre">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombre </th>
+        <td mat-cell *matCellDef="let element"> {{element.nombre} </td>
+      </ng-container>
+    
+      <!-- dependencia Column -->
+      <ng-container matColumnDef="dependencia">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Dependencia </th>
+        <td mat-cell *matCellDef="let element"> {{element.dependencia}} </td>
+      </ng-container>
+    
+      <!-- tipoUsuario Column -->
+      <ng-container matColumnDef="tipoUsuario">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Tipo Usuario </th>
+        <td mat-cell *matCellDef="let element"> {{element.tipoUsuario}} </td>
+      </ng-container>
+      
+      <!-- correo Column -->
+      <ng-container matColumnDef="correo">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Correo </th>
+        <td mat-cell *matCellDef="let element"> {{element.correo}} </td>
+      </ng-container>
+      
+      <!-- extension Column -->
+      <ng-container matColumnDef="extension">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Sede </th>
+        <td mat-cell *matCellDef="let element"> {{element.extension}} </td>
+      </ng-container>
+      
+      <!-- usuario Column -->
+      <ng-container matColumnDef="usuario">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Usuario </th>
+        <td mat-cell *matCellDef="let element"> {{element.usuario}} </td>
+      </ng-container>
+    
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    
+
+  </div>
+</section>
+
+
+
+  
