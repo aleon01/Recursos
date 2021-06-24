@@ -6,6 +6,8 @@ import java.util.Optional;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
 import co.edu.unicundi.recursosInvestigacion.dto.usuarioDTO;
@@ -19,6 +21,8 @@ import co.edu.unicundi.recursosInvestigacion.service.IUsuarioService;
 @Service
 public class UsuarioServiceImp implements IUsuarioService{
 
+	
+	
 	@Autowired
 	private IUsuarioRepo repo;
 
@@ -137,6 +141,8 @@ public class UsuarioServiceImp implements IUsuarioService{
 			ModelMapper modelMapper = new ModelMapper();
 			dtouser = modelMapper.map(optional, usuarioDTO.class);
 			dtouser.getRolUser().setUsuarios(null);
+			
+			UserDetails auth;
 		} else {
 			throw new ModelNotFoundException("Usuario no existe");
 		}
